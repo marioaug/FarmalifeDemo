@@ -1,0 +1,138 @@
+/* Contenedor principal */
+.app-container {
+  font-family: 'Arial', sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f5f8fb;
+}
+
+/* Header con logo */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.logo {
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+/* Barra de búsqueda */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.search-bar input {
+  flex: 1;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+.search-bar button {
+  margin-left: 10px;
+  padding: 15px 25px;
+  font-size: 18px;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.search-bar button:hover {
+  background-color: #0056b3;
+}
+
+/* Spinner */
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #007bff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Producto encontrado */
+.product-card {
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #e9f5ff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.product-card img.product-image {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+.price {
+  color: #28a745;
+  font-size: 22px;
+}
+
+/* Fade-in */
+.fade-in {
+  animation: fadeInUp 0.5s ease-out;
+}
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Error */
+.error {
+  text-align: center;
+  font-size: 20px;
+  color: red;
+}
+
+/* Historial */
+.history {
+  margin-top: 30px;
+}
+.history ul {
+  list-style: none;
+  padding: 0;
+}
+.history li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  font-size: 18px;
+}
+.product-card {
+    text-align: center; /* Centra horizontalmente todo el contenido */
+    display: block; /* Asegura que no se use Flexbox o Grid */
+    /* ... (otras reglas del product-card) ... */
+}
+
+/* 2. Estilos de la imagen miniatura (Centrada y Pequeña) */
+.product-image-miniatura-centered {
+    /* Define el tamaño pequeño (puedes ajustar el 80px si lo quieres más grande/chico) */
+    width: 200px; 
+    height: 200px;
+    
+    /* Centrado de la imagen: margin auto funciona con display: block */
+    display: block; 
+    margin: 0 auto 10px auto; /* 0 arriba, auto lados (centra), 10px abajo (separación del texto) */
+    
+    /* Estilo de imagen */
+    object-fit: cover; /* Recorta la imagen para que llene el espacio sin distorsionar */
+    border-radius: 4px;
+    border: 1px solid #cceeff; /* Borde sutil opcional */
+}
