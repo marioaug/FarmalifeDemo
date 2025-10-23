@@ -1,0 +1,152 @@
+<products>
+    <product>
+        <name>Crema Hidratante Facial 50ml</name>
+        <barcode>7790000000011</barcode>
+        <price>9500.00</price>
+    </product>
+    <product>
+        <name>Shampoo Anti-Caspa 200ml</name>
+        <barcode>7790000000012</barcode>
+        <price>6800.00</price>
+    </product>
+    <product>
+        <name>Jabón Líquido Corporal 500ml</name>
+        <barcode>7790000000013</barcode>
+        <price>8900.00</price>
+    </product>
+    <product>
+        <name>Vitamina C 1000mg x30</name>
+        <barcode>7790000000014</barcode>
+        <price>5990.00</price>
+    </product>
+    <product>
+        <name>Perfume Floral 50ml</name>
+        <barcode>7790000000015</barcode>
+        <price>15000.00</price>
+    </product>
+    <product>
+        <name>Crema Antiarrugas 30ml</name>
+        <barcode>7790000000016</barcode>
+        <price>18500.00</price>
+    </product>
+    <product>
+        <name>Pasta Dental Blanqueadora 90g</name>
+        <barcode>7790000000017</barcode>
+        <price>3500.00</price>
+    </product>
+    <product>
+        <name>Enjuague Bucal 250ml</name>
+        <barcode>7790000000018</barcode>
+        <price>4200.00</price>
+    </product>
+    <product>
+        <name>Protector Solar FPS50 100ml</name>
+        <barcode>7790000000019</barcode>
+        <price>14990.00</price>
+    </product>
+    <product>
+        <name>Crema Corporal Nutritiva 200ml</name>
+        <barcode>7790000000020</barcode>
+        <price>7990.00</price>
+    </product>
+    <product>
+        <name>Jabón Facial Suave 100g</name>
+        <barcode>7790000000021</barcode>
+        <price>5100.00</price>
+    </product>
+    <product>
+        <name>Shampoo Cabello Seco 300ml</name>
+        <barcode>7790000000022</barcode>
+        <price>7500.00</price>
+    </product>
+    <product>
+        <name>Mascarilla Capilar Reparadora 150ml</name>
+        <barcode>7790000000023</barcode>
+        <price>10990.00</price>
+    </product>
+    <product>
+        <name>Crema de Manos 75ml</name>
+        <barcode>7790000000024</barcode>
+        <price>4500.00</price>
+    </product>
+    <product>
+        <name>Serum Facial Antiarrugas 30ml</name>
+        <barcode>7790000000025</barcode>
+        <price>21000.00</price>
+    </product>
+    <product>
+        <name>Perfume Masculino 100ml</name>
+        <barcode>7790000000026</barcode>
+        <price>19500.00</price>
+    </product>
+    <product>
+        <name>Vitamina D 2000 UI x30</name>
+        <barcode>7790000000027</barcode>
+        <price>6900.00</price>
+    </product>
+    <product>
+        <name>Suplemento Omega 3 x60</name>
+        <barcode>7790000000028</barcode>
+        <price>11500.00</price>
+    </product>
+    <product>
+        <name>Crema Antiacné 30ml</name>
+        <barcode>7790000000029</barcode>
+        <price>8200.00</price>
+    </product>
+    <product>
+        <name>Desodorante Roll-On 50ml</name>
+        <barcode>7790000000030</barcode>
+        <price>2990.00</price>
+    </product>
+    <product>
+        <name>Jabón Antibacterial 100g</name>
+        <barcode>7790000000031</barcode>
+        <price>1850.00</price>
+    </product>
+    <product>
+        <name>Gel de Aloe Vera 200ml</name>
+        <barcode>7790000000032</barcode>
+        <price>5500.00</price>
+    </product>
+    <product>
+        <name>Loción Corporal 400ml</name>
+        <barcode>7790000000033</barcode>
+        <price>12000.00</price>
+    </product>
+    <product>
+        <name>Shampoo Bebé 200ml</name>
+        <barcode>7790000000034</barcode>
+        <price>6100.00</price>
+    </product>
+    <product>
+        <name>Crema de Pies 75ml</name>
+        <barcode>7790000000035</barcode>
+        <price>4700.00</price>
+    </product>
+    <product>
+        <name>Perfume Femenino 75ml</name>
+        <barcode>7790000000036</barcode>
+        <price>17500.00</price>
+    </product>
+    <product>
+        <name>Toallitas Húmedas x50</name>
+        <barcode>7790000000037</barcode>
+        <price>3100.00</price>
+    </product>
+    <product>
+        <name>Crema Solar FPS30 120ml</name>
+        <barcode>7790000000038</barcode>
+        <price>12500.00</price>
+    </product>
+    <product>
+        <name>Vitamina B12 x30</name>
+        <barcode>7790000000039</barcode>
+        <price>7900.00</price>
+    </product>
+    <product>
+        <name>Spray Desodorante 150ml</name>
+        <barcode>7790000000040</barcode>
+        <price>3800.00</price>
+    </product>
+</products>
