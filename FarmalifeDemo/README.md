@@ -188,11 +188,3 @@ Ejemplo visual:
 
 Este proyecto se distribuye bajo licencia libre para demostraciones y usos no comerciales.  
 Puedes modificarlo o adaptarlo libremente, citando la fuente original.
-
----
-
-## ⭐ Recomendación final
-
-Subí este `README.md` directamente a tu repositorio en GitHub (`FarmalifeDemo/FarmalifeDemo`).  
-Una vez que lo publiques, GitHub lo mostrará automáticamente al ingresar al proyecto.  
-Esto no solo mejora la presentación, sino que también **aumenta la credibilidad profesional** del repositorio.
