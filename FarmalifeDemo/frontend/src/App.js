@@ -12,7 +12,7 @@ const getImageUrl = (productName) => {
  .replace(/[^\w-]/g, ''); 
  
  // 2. Manejo de casos especiales o inconsistencias en nombres de archivo
- // Se mantienen las reglas de mapeo que ya definiste
+ // Se mantienen las reglas de mapeo que ya definimos
  if (productName.includes('Vitamina C')) {
  cleanName = 'vitaminac-1000mg';
  } else if (productName.includes('Perfume Floral')) {
@@ -46,7 +46,7 @@ export default function App() {
  setError(null);
 
  try {
- // Nota: Esta llamada asume que tu backend tiene un endpoint /products que filtra por barcode
+ // Nota: Esta llamada asume que el backend tiene un endpoint /products que filtra por barcode
  const res = await fetch(`http://localhost:5000/products?barcode=${barcode}`);
  if (!res.ok) throw new Error('Producto no encontrado (Error de conexión o servidor)');
 

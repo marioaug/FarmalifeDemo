@@ -129,6 +129,35 @@ Ejemplo visual:
 
 ---
 
+## 🧩 Diagrama de flujo de ramas (solo main y dev)
+gitGraph
+    commit id: "Inicio del proyecto"
+    branch dev
+    commit id: "Desarrollo inicial"
+    commit id: "Actualización de scripts y pruebas"
+    checkout main
+    merge dev
+    commit id: "Versión estable v1.0"
+    checkout dev
+    commit id: "Nueva mejora en desarrollo"
+
+### 💡 **Cómo interpretarlo**
+
+| Rama | Propósito |
+|------|------------|
+| **main** | Contiene el código **estable**, probado y listo para desplegar o publicar. |
+| **dev** | Rama de **desarrollo activo** donde hacés tus cambios, pruebas y mejoras antes de fusionar a `main`. |
+
+📘 **Uso recomendado:**
+- Hacés todos tus cambios en `dev`.  
+- Cuando el proyecto esté estable, mergeás así:
+  ```bash
+  git checkout main
+  git merge dev
+  git push origin main
+
+---
+
 ## 🧠 Recomendaciones técnicas
 
 - Mantener los nombres de archivos sin espacios ni caracteres especiales.  
