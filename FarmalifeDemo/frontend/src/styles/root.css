@@ -1,0 +1,7 @@
+:root {
+  --primary-color: #5d3587; /* Morado Oscuro del Logo */
+  --secondary-color: #79c99e; /* Verde del Logo/Precio */
+  --background-light: #f4f6f9;
+  --border-color: #ddd;
+  --error-color: #e53935;
+}
