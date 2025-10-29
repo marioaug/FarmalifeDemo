@@ -8,6 +8,8 @@ const getImageUrl = (productName) => {
  // 1. Limpieza estándar: minúsculas, reemplazar espacios con guiones
  let cleanName = productName
  .toLowerCase()
+ .normalize("NFD")               // descompone acentos (á → a + ´)
+ .replace(/[\u0300-\u036f]/g, "") // elimina los acentos
  .replace(/ /g, '-')
  .replace(/[^\w-]/g, ''); 
  

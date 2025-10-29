@@ -4,7 +4,7 @@
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  background: #f5f8fb;
+  background: #daa5f0;
 }
 
 /* Header con logo */
@@ -58,7 +58,7 @@
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  animation: spin 1s linear infinite;
+  animation: spin 2s linear infinite;
 }
 @keyframes spin {
   0% { transform: rotate(0deg); }
@@ -67,12 +67,12 @@
 
 /* Producto encontrado */
 .product-card {
-  border: 2px solid #007bff;
+  border: 2px solid #8c00ff;
   border-radius: 10px;
   padding: 20px;
   text-align: center;
   margin-bottom: 20px;
-  background-color: #e9f5ff;
+  background-color: #ffd3ff;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 .product-card img.product-image {
@@ -82,7 +82,7 @@
   border-radius: 8px;
 }
 .price {
-  color: #28a745;
+  color: #28a744;
   font-size: 22px;
 }
 
