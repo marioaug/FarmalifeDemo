@@ -48,28 +48,38 @@ export default function App() {
  setError(null);
 
  try {
- // Nota: Esta llamada asume que el backend tiene un endpoint /products que filtra por barcode
- const res = await fetch(`http://localhost:5000/products?barcode=${barcode}`);
- if (!res.ok) throw new Error('Producto no encontrado (Error de conexión o servidor)');
+  // Usar la URL dinámica del backend desde el archivo .env
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 
- const data = await res.json();
+  // Endpoint de búsqueda con el código de barras
+  const res = await fetch(`${API_URL}/products?barcode=${barcode}`);
 
- if (data.length === 0) {
- setFoundProduct(null);
- setError('Producto no encontrado');
- } else {
- setFoundProduct(data[0]);
- // Añade al historial, asegurando que no haya duplicados y limitando a 5
- setHistory(prev => [data[0], ...prev.filter(p => p.barcode !== data[0].barcode)].slice(0, 5));
- }
- } catch (err) {
- setFoundProduct(null);
- setError(`Error al buscar: ${err.message}`);
- } finally {
- setLoading(false);
- setBarcode('');
- }
- };
+  if (!res.ok) {
+    throw new Error(`Error del servidor (${res.status}): ${res.statusText}`);
+  }
+
+  const data = await res.json();
+
+  if (!Array.isArray(data) || data.length === 0) {
+    setFoundProduct(null);
+    setError("Producto no encontrado 😕");
+  } else {
+    const product = data[0];
+    setFoundProduct(product);
+
+    // Evita duplicados en el historial y limita a 5
+    setHistory((prev) => 
+      [product, ...prev.filter((p) => p.barcode !== product.barcode)].slice(0, 5)
+    );
+  }
+} catch (err) {
+  console.error("❌ Error al buscar producto:", err);
+  setFoundProduct(null);
+  setError(`Error al buscar producto: ${err.message}`);
+} finally {
+  setLoading(false);
+  setBarcode('');
+}; 
 
  return (
  <div className="app-container">
@@ -139,4 +149,5 @@ export default function App() {
  )}
  </div>
  );
-}
+}};
+

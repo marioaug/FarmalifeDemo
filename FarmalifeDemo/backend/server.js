@@ -1,34 +1,53 @@
-const express = require('express');
-const sqlite3 = require('sqlite3').verbose();
-const cors = require('cors');
+// server.js
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import dotenv from 'dotenv';
+
+// Cargar variables de entorno
+dotenv.config();
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
-// Habilitar CORS
+// Middleware
 app.use(cors());
+app.use(express.json());
 
-const db = new sqlite3.Database('./products.db');
+// Conexión a MongoDB Atlas usando la variable del .env
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('✅ Conectado a MongoDB Atlas'))
+.catch(err => console.error('❌ Error de conexión a MongoDB:', err));
 
-// Endpoint con soporte de búsqueda por código de barras
-app.get('/products', (req, res) => {
-    const { barcode } = req.query; // capturamos el query param
-    let query = "SELECT * FROM products";
-    const params = [];
-
-    if (barcode) {
-        query += " WHERE barcode = ?"; // filtramos por código de barras
-        params.push(barcode);
-    }
-
-    db.all(query, params, (err, rows) => {
-        if (err) {
-            return res.status(500).json({ error: err.message });
-        }
-        res.json(rows);
-    });
+// Definir el esquema y modelo
+const productSchema = new mongoose.Schema({
+  id: Number,
+  name: String,
+  barcode: String,
+  price: Number,
 });
 
+const Product = mongoose.model('Product', productSchema, 'products');
+
+// Endpoint principal
+app.get('/products', async (req, res) => {
+  try {
+    const { barcode } = req.query;
+    const products = barcode
+      ? await Product.find({ barcode })
+      : await Product.find();
+
+    res.json(products);
+  } catch (error) {
+    console.error('❌ Error al consultar MongoDB:', error);
+    res.status(500).json({ error: 'Error al obtener productos' });
+  }
+});
+
+// Iniciar servidor
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+  console.log(`🌍 Servidor corriendo en http://localhost:${PORT}`);
 });

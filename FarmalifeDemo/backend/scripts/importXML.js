@@ -18,7 +18,7 @@ async function importXML() {
     const parser = new xml2js.Parser();
     const result = await parser.parseStringPromise(xmlData);
 
-    // 🔍 Ajustá esta parte según la estructura del XML
+    // Ajustá esta parte según la estructura del XML
     const items = result.products?.product || [];
 
     if (items.length === 0) {
