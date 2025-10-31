@@ -6,23 +6,26 @@
 
 ## 📖 Descripción
 
-**Farmalife Demo** es un proyecto de demostración que muestra un catálogo de productos (como cremas, shampoos, etc.) con su **nombre, precio, código de barras e imagen**.  
+**Farmalife Demo** es un proyecto de demostración que permite buscar en un catálogo de productos (como cremas, shampoos, etc.) con su **código de barras**, mostrando su **nombre, precio e imagen**. Simulando una farmacia, pero aplicable a otros rubros como supermercados, cosméticas, perfumerías etc.  
 Los datos se obtienen desde una **base de datos local** y un **archivo XML**, mientras que las imágenes se cargan dinámicamente desde una carpeta local servida por un servidor Node.js en `http://localhost:3000`.
 
 Su objetivo principal es ilustrar cómo integrar distintas fuentes de datos (XML, DB e imágenes locales) en una aplicación ligera y funcional.
+ACTUALIZACIÓN: el proyecto evolucionó a Node.js + Express + MongoDB + React, se integra un **frontend en React** y un **backend Node.js + Express** conectado a **MongoDB Atlas**, para simular un sistema real de catálogo con datos centralizados.
 
 ---
 
-## ⚙️ Tecnologías utilizadas
+## ⚙️ Tecnologías utilizadas (Actualizado)
 
 | Área | Tecnología / Herramienta | Descripción |
 |------|----------------------------|--------------|
-| 💻 Backend | **Node.js** + **Express.js** | Servidor para servir las imágenes y manejar la lógica |
-| 🗄️ Base de datos | SQLite / MySQL (según configuración) | Almacena nombre, precio y código de barras |
+| 💻 Backend | **Node.js** + **Express.js** | Servidor para servir las imágenes y manejar la lógica | API REST para gestión de productos
+| 💻 Frontend | **React.js** | Interfaz dinámica y responsiva para el buscador |
+| 🗄️ Base de datos | SQLite / MySQL (según configuración) | Almacena nombre, precio y código de barras | **MongoDB Atlas** | Base de datos en la nube, escalable y profesional |
 | 🧾 Datos estructurados | XML | Define el listado de productos y metadatos |
 | 🖼️ Archivos estáticos | Servidor Express | Carga las imágenes desde la carpeta `/images` |
-| 🧰 Control de versiones | Git + GitHub | Control del código fuente |
-| 🌐 Visualización | HTML / React / JavaScript | Interfaz para mostrar los productos |
+| ⚙️ Configuración | **dotenv (.env)** | Manejo seguro de variables de entorno |
+| 🧰 Control de versiones | Git + GitHub | Control del código fuente | Flujo con ramas 'main y 'dev
+| 🌐 Visualización | HTML / CSS / JavaScript | Interfaz para mostrar los productos |
 
 ---
 
@@ -171,6 +174,30 @@ gitGraph
 
 ---
 
+Flujo de trabajo actual:
+
+El frontend React envía peticiones a http://localhost:5000/products?barcode=...
+
+El backend Express consulta MongoDB Atlas y devuelve la información del producto.
+
+Las imágenes se cargan desde /public/products_images en el frontend.
+
+---
+
+## 📲 Funcionalidad principal
+
+🔎 Búsqueda de productos por código de barras
+
+El usuario ingresa o escanea un código (por ejemplo: 7790000000011).
+
+El sistema busca el producto correspondiente en MongoDB.
+
+Se muestran su nombre, precio e imagen.
+
+Se guarda un historial de las últimas 5 búsquedas.
+
+---
+
 ## 🧠 Integración con hardware
 
 - El proyecto Farmalife Demo está diseñado pensando en una futura integración física mediante una Raspberry Pi.
@@ -194,9 +221,9 @@ gitGraph
 
 - Ideal para mostradores, puntos de venta o consultas rápidas en farmacias.
 
-## 💡 Posibles mejoras futuras
+## 💡 Posibles mejoras futuras planificadas
 
-- Integrar una API REST para gestionar productos.  
+- Integrar una API REST para gestionar productos. (Actualizado)  
 - Agregar panel administrativo para actualizar precios.  
 - Sincronizar los productos automáticamente entre XML y base de datos.  
 - Permitir carga de imágenes desde interfaz web.  
